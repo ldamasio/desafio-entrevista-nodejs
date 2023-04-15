@@ -1,0 +1,6 @@
+Testado no Ubuntu 22.10
+
+$ sudo docker-compose up -d --build
+
+http://localhost:3000
+
