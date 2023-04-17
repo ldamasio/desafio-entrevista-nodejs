@@ -1,1 +1,5 @@
+.vscode
 .env
+desafio-entrevista-nodejs/.env
+desafio-entrevista-nodejs/node_modules
+desafio-entrevista-nodejs/dist

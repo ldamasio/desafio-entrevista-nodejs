@@ -10,9 +10,8 @@ services:
       - MYSQL_DATABASE=drconsulta
       - MYSQL_USER=drconsulta
       - MYSQL_PASSWORD=$MYSQL_PASSWORD
-    expose:
-      - 3306
-      - 33060
+    ports:
+    - 3306:3306
   api:
     container_name: NEST_api
     build:
@@ -23,7 +22,6 @@ services:
       - ./desafio-entrevista-nodejs:/usr/src/app
     env_file:
     - .env
-    # Run a command against the development stage of the image
     command: npm run start:dev
     ports:
       - 3001:3000
