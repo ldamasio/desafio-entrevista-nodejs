@@ -5,5 +5,14 @@ export class CreateCompanyDto {
   name: string;
 
   @IsNotEmpty()
-  description: string;
+  cnpj: string;
+
+  @IsNotEmpty()
+  address: string;
+
+  @IsNotEmpty()
+  qty_motorcycles: number;
+
+  @IsNotEmpty()
+  qty_cars: number;
 }

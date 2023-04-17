@@ -1,26 +1,41 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateVehicleDto } from './dto/create-vehicle.dto';
 import { UpdateVehicleDto } from './dto/update-vehicle.dto';
+import { Vehicle } from './entities/vehicle.entity';
 
 @Injectable()
 export class VehiclesService {
+  constructor(
+    @InjectRepository(Vehicle) private readonly repository: Repository<Vehicle>,
+  ) {}
+
   create(createVehicleDto: CreateVehicleDto) {
-    return 'This action adds a new vehicle';
+    return this.repository.save(createVehicleDto);
   }
 
-  findAll() {
-    return `This action returns all vehicles`;
+  findAll(): Promise<Vehicle[]> {
+    return this.repository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} vehicle`;
+  findOne(id: number): Promise<Vehicle> {
+    return this.repository.findOne({ where: { id } });
   }
 
-  update(id: number, updateVehicleDto: UpdateVehicleDto) {
-    return `This action updates a #${id} vehicle`;
+  async update(id: number, updateVehicleDto: UpdateVehicleDto): Promise<Vehicle> {
+    const vehicle = await this.repository.preload({
+      id: id,
+      ...updateVehicleDto,
+    });
+    if (!Vehicle) {
+      throw new NotFoundException(`Company ${vehicle} not found`);
+    }
+    return this.repository.save(vehicle);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} vehicle`;
+  async remove(id: number) {
+    const vehicle = await this.findOne(id);
+    return this.repository.remove(vehicle);
   }
 }

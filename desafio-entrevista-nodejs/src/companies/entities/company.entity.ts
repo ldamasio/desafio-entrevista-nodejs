@@ -11,16 +11,25 @@ export class Company {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 255 })
-  name: string;
-
-  @Column('text')
-  description: string;
-
   @CreateDateColumn()
   created_at: Date;
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @Column({ length: 255 })
+  name: string;
+
+  @Column({ length: 30 })
+  cnpj: string;
+
+  @Column({ length: 500 })
+  address: string;
+
+  @Column()
+  qty_motorcycles: number;
+
+  @Column()
+  qty_cars: number;
 
 }
