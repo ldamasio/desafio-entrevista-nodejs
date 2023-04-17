@@ -11,6 +11,9 @@ export class CreateCompanyDto {
   address: string;
 
   @IsNotEmpty()
+  phone: string;
+
+  @IsNotEmpty()
   qty_motorcycles: number;
 
   @IsNotEmpty()

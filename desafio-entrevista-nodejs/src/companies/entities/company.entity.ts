@@ -26,6 +26,9 @@ export class Company {
   @Column({ length: 500 })
   address: string;
 
+  @Column({ length: 50 })
+  phone: string;
+
   @Column()
   qty_motorcycles: number;
 
