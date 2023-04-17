@@ -1,69 +1,30 @@
-![Dr Consulta](https://drconsulta.com/_next/image?url=%2Fimages%2FLogo-Dr-Consulta-Branco.png&w=128&q=100 "DrConsulta")
+# SISTEMA DE GESTÃO DO ESTACIONAMENTO SABARUTUBA
 
-*"Salvar vidas e cuidar das pessoas porque elas não podem esperar nas filas da saúde."*
-Conheça: www.drconsulta.com
+O nome da empresa fictícia Sabarutuba é apenas uma brincadeira, 
+unindo partes das palavras Sabará e Jurubatuba.
 
-## Objetivo
-O teste é destinado para vaga de Desenvolvedor Back-end entendo como o candidato efetuou a solução e o raciocinio de criação
+## TECNOLOGIAS UTILIZADAS
 
-## Project - API
-Criar uma API REST para gerenciar um estacionamento de carros e motos.
+DOCKER - Nesta versão de desenvolvimento, o sistema utiliza docker 
+apenas para subir o container do banco de dados.
 
-#### Stack tecnológica
-- NestJS
-- TypeOrm
-- Mysql
-- Swagger
+MYSQL - O clássico MySQL guardará todos os dados de gestão em suas 
+tabelas.
 
-#### Cadastro de estabelecimento
-Criar um cadastro da empresa com os seguintes campos:
-- Nome;
-- CNPJ;
-- Endereço;
-- Telefone;
-- Quantidade de vagas para motos;
-- Quantidade de vagas para carros.
-- 
-**Todos** os campos são de preenchimento obrigatório.
+NESTJS - Framework NodeJS que nos permitirá escrever os códigos a 
+partir de uma base, incluindo toda uma arquitetura de software para o 
+nosso projeto.
 
-#### Cadastro de veículos
-Criar um cadastro de veículos com os seguintes campos:
-- Marca;
-- Modelo;
-- Cor;
-- Placa;
-- Tipo.
-- 
-**Todos** os campos são de preenchimento obrigatório.
+## CHAMADAS DE SERVIÇOS
 
-#### Funcionalidades
-- **Estabelecimento:** CRUD;
-- **Veículos:** CRUD;
-- **Controle de entrada e saída de veículos.**
+## CONFIGURAÇÕES
 
-#### Requisitos
-- Controle JWT via Handshake
-- Modelagem de dados;
-- O retorno deverá ser em formato JSON;
-- Requisições GET, POST, PUT ou DELETE, conforme a melhor prática;
-- A persistência dos dados deverá ser em banco *relacional MYSQL*
-- Criar README do projeto descrevendo as tecnologias utilizadas, chamadas dos serviços e configurações necessário para executar a aplicação.
-   
-#### Ganha mais pontos
-- Sumário da quantidade de entrada e saída;
-- Sumário da quantidade de entrada e saída de veículos por hora;
-- Criação relatórios para visão ao dono do estabelecimento;
-- Desenvolver utilizando TDD;
+### INSTALAÇÃO
 
-## DevOps (Diferencial)
-Efetuar deploy da nossa API no ambiente do Google Cloud Platform utilizando os serviços
+Testado no Ubuntu 22.10
 
-#### Serviços do GCP
-- Container Registry (Subir a imagem docker)
-- Cloud Run
+$ sudo docker-compose up -d --build
 
-## Submissão
-Crie um fork do teste para acompanharmos o seu desenvolvimento através dos seus commits.
+http://localhost:3000
 
-## Obrigado!
-Agradecemos sua participação no teste. Boa sorte! 😄
+Para mais detalhes, leia o arquivo INSTALL
