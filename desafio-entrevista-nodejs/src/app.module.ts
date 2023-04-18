@@ -7,6 +7,9 @@ import { CompaniesModule } from './companies/companies.module';
 import { VehiclesModule } from './vehicles/vehicles.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { CheckInModule } from './check-in/check-in.module';
+import { CheckOutModule } from './check-out/check-out.module';
+import { ReportsModule } from './reports/reports.module';
 
 @Module({
   imports: [
@@ -22,7 +25,7 @@ import { UsersModule } from './users/users.module';
       synchronize: true,
     }),
     CompaniesModule, 
-    VehiclesModule, AuthModule, UsersModule
+    VehiclesModule, AuthModule, UsersModule, CheckInModule, CheckOutModule, ReportsModule
   ],
   controllers: [AppController],
   providers: [AppService],
